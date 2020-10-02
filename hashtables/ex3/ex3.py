@@ -1,9 +1,18 @@
 def intersection(arrays):
     """
-    YOUR CODE HERE
+    Finds the intersection of list of numbers.
     """
-    # Your code here
-
+    numbers = {}
+    for array in arrays:
+        for number in array:
+            if number not in numbers:
+                numbers[number] = 1
+            else:
+                numbers[number] += 1
+    result = []
+    for number in numbers:
+        if numbers[number] > 1:
+            result.append(number)
     return result
 
 

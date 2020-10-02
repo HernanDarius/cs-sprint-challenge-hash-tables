@@ -1,7 +1,14 @@
 def get_indices_of_item_weights(weights, length, limit):
     """
-    YOUR CODE HERE
+    Finds the indices of weights.
     """
-    # Your code here
+    cache = {}
+
+    for i in range(length):
+        diff, current = limit - weights[i], weights[i]
+        if diff in cache:
+            return (i, cache[diff])
+        else:
+            cache[current] = i
 
     return None
